@@ -1,0 +1,30 @@
+**Login/auth**
+
+- password recovery toevoegen
+- meerdere ip's toevoegen?
+- MFA implementeren
+
+**Admin page**
+
+Admin dashboard:
+- draaiende tests
+- mogelijkheid tests te stoppen
+- scanhistorie inzien
+- ip whitelist requests
+
+**User page**
+
+- nmap scan type selectie
+- nmap scanhistorie
+- User dashboard indelen
+
+
+**webapp**
+
+- rate limiting tegen ddos toevoegen
+- Users aan organisaties toevoegen. Voor een organisatie zijn alleen geverifieerde ip's beschikbaar om te scannen.
+  Wanneer een ip toegevoegd moet worden moet dit via admin gevraagd worden
+
+
+
+

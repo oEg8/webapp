@@ -19,7 +19,7 @@ export default function RequestForm({ onSubmit }) {
     setError("");
 
     if (!form.client_name || !form.contact_email || !form.scope) {
-      setError("Naam, e-mail en scope zijn verplicht.");
+      setError("Name, email, and scope are required.");
       return;
     }
 
@@ -28,7 +28,7 @@ export default function RequestForm({ onSubmit }) {
       await onSubmit(form);
       setForm(initialState);
     } catch (err) {
-      setError(err?.response?.data || "Opslaan mislukt");
+      setError(err?.response?.data || "Saving failed");
     } finally {
       setSubmitting(false);
     }
@@ -37,17 +37,17 @@ export default function RequestForm({ onSubmit }) {
   return (
     <form className="card" onSubmit={handleSubmit}>
       <div className="card-header">
-        <h3>Aanvraag indienen</h3>
-        <p>Vertel ons welke test u nodig heeft.</p>
+        <h3>Submit request</h3>
+        <p>Tell us which test you need.</p>
       </div>
       <div className="card-body">
         {error && <div className="alert">{error}</div>}
         <label>
-          Naam organisatie
-          <input value={form.client_name} onChange={(e) => update("client_name", e.target.value)} placeholder="ACME BV" />
+          Organization name
+          <input value={form.client_name} onChange={(e) => update("client_name", e.target.value)} placeholder="ACME Corp" />
         </label>
         <label>
-          Contact e-mail
+          Contact email
           <input value={form.contact_email} onChange={(e) => update("contact_email", e.target.value)} placeholder="security@acme.com" />
         </label>
         <label>
@@ -55,13 +55,13 @@ export default function RequestForm({ onSubmit }) {
           <textarea value={form.scope} onChange={(e) => update("scope", e.target.value)} placeholder="API endpoints, webapp, etc." rows={3} />
         </label>
         <label>
-          Voorkeur test window
-          <input value={form.preferred_window} onChange={(e) => update("preferred_window", e.target.value)} placeholder="Bijv. week 12, buiten kantooruren" />
+          Preferred test window
+          <input value={form.preferred_window} onChange={(e) => update("preferred_window", e.target.value)} placeholder="e.g. week 12, outside business hours" />
         </label>
       </div>
       <div className="card-footer">
         <button type="submit" disabled={submitting}>
-          {submitting ? "Verzenden..." : "Verzend aanvraag"}
+          {submitting ? "Sending..." : "Submit request"}
         </button>
       </div>
     </form>

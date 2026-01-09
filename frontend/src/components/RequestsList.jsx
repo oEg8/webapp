@@ -1,13 +1,13 @@
 export default function RequestsList({ requests, onStatusChange }) {
   if (!requests.length) {
-    return <div className="card">Nog geen aanvragen.</div>;
+    return <div className="card">No requests yet.</div>;
   }
 
   return (
     <div className="card">
       <div className="card-header">
-        <h3>Recente aanvragen</h3>
-        <p>Bekijk status en plan van de lopende pentests.</p>
+        <h3>Recent requests</h3>
+        <p>Review status and planning for ongoing pentests.</p>
       </div>
       <div className="card-body list">
         {requests.map((req) => (
@@ -27,7 +27,7 @@ export default function RequestsList({ requests, onStatusChange }) {
               </div>
             </header>
             <p>{req.scope}</p>
-            {req.preferred_window && <div className="meta">Venster: {req.preferred_window}</div>}
+            {req.preferred_window && <div className="meta">Window: {req.preferred_window}</div>}
             <div className="meta">Contact: {req.contact_email}</div>
           </article>
         ))}

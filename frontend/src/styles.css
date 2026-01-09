@@ -108,6 +108,19 @@ label {
   margin-bottom: 12px;
 }
 
+label.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+label.checkbox input {
+  width: auto;
+  margin-top: 0;
+}
+
 input,
 textarea,
 select {
@@ -135,9 +148,53 @@ button {
   width: 100%;
 }
 
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+button.active {
+  background: #22d3ee;
+  color: #0b1222;
+}
+
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.nav button {
+  width: auto;
+  padding: 8px 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.code-block {
+  white-space: pre-wrap;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  margin-top: 12px;
 }
 
 .list {
